@@ -1,0 +1,23 @@
+version: "3.3"
+
+services:
+  dokuwiki:
+    image: php:7.4-apache
+    container_name: dokuwiki
+    restart: always
+    networks:
+      - dokuwiki
+    ports:
+      - "8080:80"
+    volumes:
+      - type: bind
+        source: ./conf
+        target: /var/www/html/conf
+      - type: bind
+        source: ./data
+        target: /var/www/html/data
+
+networks:
+  dokuwiki:
+
+

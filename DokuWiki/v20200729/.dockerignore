@@ -1,0 +1,7 @@
+# dokuwiki-release_stable_2020-07-29
+.dockerignore
+.gitignore
+docker-compose.yaml
+Dockerfile
+Makefile
+release_stable_2020-07-29.zip
