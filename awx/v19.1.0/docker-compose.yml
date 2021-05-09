@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  awx:
+    user: awx
+    container_name: awx
+    privileged: true
+    image: qiyutech:awx
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      SDB_HOST: 0.0.0.0
+      SDB_PORT: 5899
+      AWX_GROUP_QUEUES: tower
+    env_file:
+      - .env
+    command: launch_awx.sh
+    volumes:
+      - type: bind
+        source: ./supervisord.conf
+        target: /etc/supervisord.conf
+      - type: bind
+        source: ./receptor.conf
+        target: /etc/receptor/receptor.conf
+    ports:
+      - "8050:8050"
+      - "2222:2222"
+      - "5899-5999:5899-5999"
