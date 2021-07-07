@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  grafana:
+    image: grafana/grafana:8.0.4
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./log
+        target: /var/log/grafana
+      - type: bind
+        source: ./data
+        target: /var/lib/grafana
+      - type: bind
+        source: ./conf
+        target: /etc/grafana
