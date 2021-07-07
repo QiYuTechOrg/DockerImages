@@ -1,0 +1,8 @@
+# healthchecks-1.21.0
+.dockerignore
+.env
+.gitignore
+docker-compose.yml
+Dockerfile
+Makefile
+v1.21.0.zip
