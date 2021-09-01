@@ -13,4 +13,4 @@ jobs:
       # https://github.com/mxschmitt/action-tmate
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 15
+        timeout-minutes: 60
