@@ -1,0 +1,16 @@
+name: TMate Demo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # use tmate for debug
+      # https://github.com/mxschmitt/action-tmate
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
